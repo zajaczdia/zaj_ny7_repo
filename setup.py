@@ -24,7 +24,7 @@ setup(
     entry_points={
         'console_scripts': [
             'speed_generator = speed_monitor.speed_generator:main',
-            'speed_generator = speed_monitor.speed_generator:main',
+            'speed_observer = speed_monitor.speed_observer:main',
         ],
     },
 )
