@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>ros2_py_template</name>
+  <name>speed_monitor</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="todo@todo.com">he</maintainer>
+  <description>Kisbeadandó: Speed Monitor</description>
+  <maintainer email="zajaczdiana@gmail.com">zajaczdia</maintainer>
   <license>GNU General Public License v3.0</license>
 
   <test_depend>ament_copyright</test_depend>
@@ -13,6 +13,10 @@
   <test_depend>python3-pytest</test_depend>
   <exec_depend>ros2launch</exec_depend>
   
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+
   <export>
     <build_type>ament_python</build_type>
   </export>
