@@ -31,3 +31,7 @@ source ~/ros2_ws/install/setup.bash
 ``` r
 ros2 launch speed_monitor speed_monitor_launch.py
 ```
+```mermaid
+    graph LR
+        A[speed_generator] -- speed_data --> B[speed_observer]
+        B -- alert --> C[alert_topic]
