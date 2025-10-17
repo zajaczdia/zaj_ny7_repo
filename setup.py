@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 from glob import glob
 import os
 
-package_name = 'ros2_py_template'
+package_name = 'speed_monitor'
 
 setup(
     name=package_name,
@@ -16,14 +16,15 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='todo',
-    maintainer_email='todo@todo.com',
-    description='TODO: Package description',
+    maintainer='zajaczdia',
+    maintainer_email='zajaczdiana@gmail.com',
+    description='Kisbeadandó: Speed Monitor',
     license='GNU General Public License v3.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            # 'control_vehicle = ros2_py_template.control_vehicle:main',
+            'speed_generator = speed_monitor.speed_generator:main',
+            'speed_generator = speed_monitor.speed_generator:main',
         ],
     },
 )
