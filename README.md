@@ -1,4 +1,4 @@
-# `ros2_py_template` package
+# `speed_monitor` package
 ROS 2 python package.  [![Static Badge](https://img.shields.io/badge/ROS_2-Humble-34aec5)](https://docs.ros.org/en/humble/)
 ## Packages and build
 
@@ -31,7 +31,18 @@ source ~/ros2_ws/install/setup.bash
 ``` r
 ros2 launch speed_monitor speed_monitor_launch.py
 ```
+A package két node-ból áll. Az első a speed_generator node, aminek a feladata szimulálni a jármű sebességét véletlenszerűen 0-130 km/h között. A sebességet a speed_data topicban hirdeti (std_msgs/msg/Float32). A második node a speed_observer, aminek a feladata a speed_data topicot figyelni és ha a sebesség meghaladja a 90 km/h-t, akkor figyelmeztetést ad a felhasználónak. Ez a node az alert topicban hirdet (std_msgs/msg/String).
 ```mermaid
-    graph LR
-        A[speed_generator] -- speed_data --> B[speed_observer]
-        B -- alert --> C[alert_topic]
+    graph TD
+        A[Package: speed_monitor] --- B[Node: speed_generator]
+        A --- C[Node: speed_observer]
+
+
+        B -- Publishes --> D[(Topic: /speed_data<br/>Type: std_msgs/msg/Float32)]
+        C -- Subscribes --> D
+
+
+        subgraph "speed_monitor package"
+            B:::publisher
+            C:::subscriber
+    end
